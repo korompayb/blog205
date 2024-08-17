@@ -1,0 +1,621 @@
+/* Global Styles */
+body {
+    font-family: 'Frutiger', sans-serif; /* Retain Frutiger for its clean look */
+    background: linear-gradient(135deg, #a7e0e2, #e0f7fa); /* Softer gradient with aqua tones */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6; /* Keep line-height for readability */
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(255, 255, 255, 0.7); /* More transparency for a soft, airy look */
+    padding:0;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow for emphasis */
+    margin: 0em;
+    backdrop-filter: blur(10px); /* Blur effect for a frosted glass look */
+}
+
+/* Main Title */
+header h1 {
+    font-size: 3.5em;
+    color: #007c91; /* Adjusted to a deeper teal for a modern look */
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 1.5em;
+}
+
+nav a {
+    color: #007c91; /* Deeper teal */
+    text-decoration: none;
+    margin: 0 1.5em;
+    padding: 0.75em 1.5em;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white for floating effect */
+    border: 2px solid #007c91;
+    border-radius: 50px; /* More rounded for a bubble-like appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #007c91;
+    color: white;
+    transform: scale(1.1); /* Increased scale for a more noticeable hover effect */
+}
+
+
+
+/* Section Styles */
+section {
+    margin-bottom: 2em;
+}
+
+section h2 {
+    font-size: 2.5em;
+    color: #007c91;
+}
+
+section p {
+    margin: 1em 0;
+    line-height: 1.8;
+    color: #444; /* Slightly lighter for better readability */
+}
+
+/* Card Styles */
+.card {
+    background-color: rgba(174, 213, 129, 0.8); /* Light green with transparency */
+    border-radius: 20px; /* Rounded corners */
+    padding: 2em;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+    margin-bottom: 1.5em;
+    backdrop-filter: blur(8px); /* Blur effect for added softness */
+}
+
+/* Button Styles */
+button {
+    background-color: #007c91; /* Adjusted teal */
+    color: white;
+    padding: 0.85em 1.5em;
+    border: none;
+    border-radius: 50px; /* Fully rounded corners */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform for smooth hover */
+}
+
+button:hover {
+    background-color: #005f6b;
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+
+
+.none {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.create-post-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #28a746cb;
+    color: white;
+    padding: 0.2em 0.5em;
+    text-decoration: none;
+    border-radius: 20px; /* Rounded button corners */
+    border: 2px solid #218838;
+    font-weight: bold; /* Bolder button text */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.create-post-btn:hover {
+    background-color: #218838;
+    transform: scale(1.09); /* Slight zoom on hover */
+}
+
+a.create-post-btn i {
+    margin-right: 0.7em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    nav a {
+        margin: 0 0.5em;
+        padding: 0.5em 1em;
+    }
+
+    main {
+        padding: 2em 1em;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: "Regular";
+    src: url("fonts/NotoSans-Regular.ttf");
+  } 
+  
+  @font-face {
+    font-family: "ExtraLight";
+    src: url("fonts/NotoSansDisplay-ExtraLight.ttf");
+  }
+  
+  body {
+    margin: 0;
+    
+    background: url("https://testing.duckwithsunglasses.com/frutiger/assets/logon.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  /*Layout*/
+  
+  .content1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    gap: 25px;
+  }
+  
+  .content1.narrow {
+    padding: 0;                                                                       
+    max-width: 1000px;
+    width: 90%;
+  }
+  
+  .content1.tutorial_start {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    gap: 50px;
+  }
+  
+  .content1.tutorial {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+    gap: 25px;
+  }
+  
+  .tutorial_column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 25px;
+    width: 100%
+  }
+  
+  .tutorial_column img{
+    width: 90%;
+  }
+  
+  .navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 25px;
+    gap: 15px;
+    
+    background: linear-gradient(180deg, rgba(99, 102, 104, 0.9) 0%, rgba(69, 71, 71, 0.9) 50.52%, rgba(52, 52, 52, 0.9) 53.12%, rgba(0, 0, 0, 0.9) 100%);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3), inset 0px 2px 1px rgba(255, 255, 255, 0.3), inset 0px -2px 1px rgba(0, 0, 0, 0.4);
+  }
+  
+  .nav.desktop{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .nav.mobile{
+    display: none;
+  }
+  
+  .navlink{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5px;  
+    align-items: center;
+  }
+  
+  .navlink:hover{
+    text-decoration: none;
+  }
+  
+  
+  .navbar img{
+    height: 36px;
+    box-shadow: none;
+    background: none;
+  }
+  
+  .vl {
+    width: 1px;
+    height: 36px;
+    
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.225) 0%, rgba(255, 255, 255, 0.18) 35.94%, rgba(255, 255, 255, 0.27) 100%);
+    box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.4);
+  }
+  
+  .hl {
+    width: 100%;
+    height: 1px;
+    
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.225) 0%, rgba(255, 255, 255, 0.18) 35.94%, rgba(255, 255, 255, 0.27) 100%);
+    box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.4);
+  }
+  
+  .navbar_tutorial_right{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 25px;
+    gap: 15px;
+    
+    right: 0;
+  }
+
+  .navpage a {
+    background: linear-gradient(180deg, #878C87 0%, #D3D4D3 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+  
+  .navpage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 25px;
+    gap: 15px;
+    
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background: linear-gradient(180deg, rgba(99, 102, 104, 0.9) 0%, rgba(69, 71, 71, 0.9) 50.52%, rgba(52, 52, 52, 0.9) 53.12%, rgba(0, 0, 0, 0.9) 100%);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3), inset 0px 2px 1px rgba(255, 255, 255, 0.3), inset 0px -2px 1px rgba(0, 0, 0, 0.4);
+    border-radius: 25px 25px 0px 0px;
+  }
+  
+  img {
+    box-shadow: inset 0px 2px 1px rgba(255, 255, 255, 0.3), inset 0px -2px 1px rgba(0, 0, 0, 0.4);
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.3));
+    border-radius: 15px;
+  }
+  
+  .standalone_img{
+    box-shadow: none;
+    background: none;
+  }
+  
+  .standalone_img.small{
+    width: auto;
+  }
+  
+  /*Mobile Menus*/
+  
+  .menu_mobile{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    gap: 15px;
+    width: 100%;
+      
+    background: linear-gradient(180deg, rgba(83, 85, 87, 0.9) 0%, rgba(14, 15, 15, 0.9) 100%);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3), inset 0px 2px 1px rgba(255, 255, 255, 0.3), inset 0px -2px 1px rgba(0, 0, 0, 0.4);
+  }
+  
+  #menu_toggle {
+    display: none;
+  }
+  
+  #menu_toggle_label {
+    cursor: pointer;
+  }
+  
+  #menu_toggle:checked + .menu_mobile {
+    transition: all 300ms ease;
+    display: flex;
+  }
+  
+  .orb{
+    height: 36px;
+    width: 36px;
+    
+    transition: all 300ms ease;
+    background: url("https://frutiger-aero.neocities.org/img/Orb.png") no-repeat;
+    background-size: 36px;
+  }
+  
+  .orb:hover{
+    transition: all 300ms ease;
+    background: url("https://frutiger-aero.neocities.org/img/OrbGlow.png") no-repeat;
+    background-size: 36px;
+  }
+  
+  #disabled {
+    filter: drop-shadow(0px -2px 1px rgba(0, 0, 0, 0.25));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.375) 0%, rgba(255, 255, 255, 0.3) 35.94%, rgba(255, 255, 255, 0.45) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+  /*content organization*/
+  
+  .columns.two{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 49% auto;
+    gap: 25px;
+  }
+  
+  .columns.three{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 33% 33% auto;
+    gap: 25px;
+  }
+  
+  .tile {
+    border-radius: 15px;
+    padding: 25px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    backdrop-filter: blur(10px);
+    color: #fafafa;
+    background: linear-gradient(180deg, rgba(83, 85, 87, 0.86) 20%, rgba(14, 15, 15, 0.561) 50%);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3), inset 0px 2px 1px rgba(255, 255, 255, 0.3), inset 0px -2px 1px rgba(0, 0, 0, 0.4);
+  }
+  
+  .tile.horiz {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 25px;
+    justify-content: space-between;
+  }
+  
+  .tile.horiz img{
+    height: 150px;
+    border-radius: 5px;
+    filter: drop-shadow(0px -2px 1px rgba(0, 0, 0, 0.25));
+  border-radius: 5px;
+    box-shadow: inset 0 0 rgba(0, 0, 0, 0);
+  }
+  
+  .tile.img{
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .tile.img img{
+    width: 100%;
+    border-radius: 5px;
+      filter: drop-shadow(0px -2px 1px rgba(0, 0, 0, 0.25));
+  border-radius: 5px;
+  }
+  
+  .swatch {
+    padding: 25px;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    
+    border-radius: 15px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3), inset 0px 2px 1px rgba(255, 255, 255, 0.3), inset 0px -2px 1px rgba(0, 0, 0, 0.4);
+  }
+  
+  @media only screen and (max-width: 850px) {
+    .content1 {
+      padding: 15px;
+    }
+    .narrow {
+      width: 100%;
+    }
+    .content1.tutorial_start, .content1.tutorial {
+      flex-direction: column;
+    }
+    .tile.horiz{
+      flex-direction: column;
+    }
+    .nav.desktop{
+      display: none;
+    }
+    .nav.mobile{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      align-items: center;
+      gap: 15px;
+    }
+    .standalone_img{
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 1100px) {
+    body{
+      background-size: 250vh;
+    }
+    .tile.horiz img{
+      height: 100px;
+    }
+    .columns{
+      grid-template-columns: auto !important;
+    }
+  }
+  
+  /* Fonts */
+  
+  a {
+    color: #61BB41;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:has(i) {
+    text-decoration: none;
+    line-height: 0;
+    word-break: normal;
+  }
+  
+  a:has(h3, i):hover {
+    line-height: 0;
+    color: #a5a8a5 !important;
+    text-decoration-thickness: 1px;
+  }
+  
+  a:visited {
+    color: #61BB41;
+  }
+  
+  a.div {
+    text-decoration: none;
+    line-height: inherit;
+    word-break: normal;
+  }
+  
+  i{
+    filter: drop-shadow(0px -2px 1px rgba(0, 0, 0, 0.25));
+    background: linear-gradient(180deg, #878C87 0%, #D3D4D3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    }
+  
+  #curpage{
+    background: linear-gradient(180deg, #9ED69B 0%, #5BA84A 48.44%, #69D137 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  h1 {
+    margin: 0 0 5px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 125%;
+   
+  
+    filter: drop-shadow(0px -2px 1px rgba(0, 0, 0, 0.25));
+    background: linear-gradient(180deg, #878C87 0%, #D3D4D3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+  h2 {
+    margin: 0 0 5px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 125%;
+
+  
+    filter: drop-shadow(0px -2px 1px rgba(0, 0, 0, 0.25));
+    background: linear-gradient(180deg, #878C87 0%, #D3D4D3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+  h3 {
+    margin: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 125%;
+
+  
+    filter: drop-shadow(0px -2px 1px rgba(0, 0, 0, 0.25));
+    background: linear-gradient(180deg, #878C87 0%, #D3D4D3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+  h4 {
+    margin: 0;
+    font-weight: normal;
+    
+    font-style: normal;
+    font-size: 20px;
+    line-height: 125%;
+
+    filter: drop-shadow(0px -2px 1px rgba(0, 0, 0, 0.25));
+    background: linear-gradient(180deg, #878C87 0%, #D3D4D3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+  ul {
+    margin: 0;
+  }
+  
+  p, li {
+    text-shadow: 0px -2px 1px rgba(0, 0, 0, 0.25);
+    color: #E6E6E6;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  sub {
+    text-shadow: 0px -2px 1px rgba(0, 0, 0, 0.25);
+    color: #E6E6E6;
+    margin: 5px 0 0 0;
+  }

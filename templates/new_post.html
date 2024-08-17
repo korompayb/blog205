@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>New Post</h2>
+<form action="{{ url_for('new_post') }}" method="post" enctype="multipart/form-data">
+    <label for="title">Title</label><br>
+    <input type="text" id="title" name="title" required><br>
+    
+    <label for="content">Content</label><br>
+    <textarea id="content" name="content" required></textarea><br>
+    
+    <label for="file">Upload Images</label><br>
+    <input class="button" type="file" id="file" name="file" multiple accept="image/png, image/jpeg, image/gif"><br>
+
+    <button class="button" type="submit">Create Post</button>
+</form>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Recent Posts</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody id="posts-container">
+            <!-- Posts will be dynamically loaded here -->
+        </tbody>
+    </table>
+    <a href="{{ url_for('new_post') }}" class="create-post-btn button">
+        <i class="fas fa-plus-circle"></i> Create a new post
+    </a>
+    <script>
+        async function fetchPosts() {
+            const response = await fetch('/posts');
+            const posts = await response.json();
+
+            // Sort posts by created_at date (newest first)
+            posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+            const postsContainer = document.getElementById('posts-container');
+            postsContainer.innerHTML = '';
+            posts.forEach(post => {
+                const postRow = document.createElement('tr'); 
+                postRow.innerHTML = `
+                    <td>${post.id}</td>
+                    <td><a href="/post/${post.id}"><i class="fas fa-file-alt"></i> ${post.title}</a></td>
+                    <td>${new Date(post.created_at).toLocaleDateString()}</td>
+                `;
+                postsContainer.appendChild(postRow);
+            });
+        }
+
+        window.addEventListener('load', () => {
+            fetchPosts();
+        });
+
+        setInterval(fetchPosts, 5000); // Refresh posts every 5 seconds
+    </script>
+{% endblock %}

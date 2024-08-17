@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog App</title>
+    <link id="stylesheet" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.tiny.cloud/1/8yauam9wk26s9zipy53adu6mzj02690i9jw1hpbd5opo66a6/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        });
+    </script>
+    <style>
+        select {
+            display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.10);
+    background: linear-gradient(0deg, #d0d2ce 0%, #dcdedb 50%, #eaece9 50%, #f1f3f0 100%);
+    font-size: 13px;
+    margin-top: 6px;
+    margin-right: 6px;
+    margin-left: 0;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #6e706d;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px #f3f3f2, inset -1px -1px #f3f3f2;
+    line-height: 1em;
+    cursor: pointer;
+    text-shadow: 1px 0 rgba(255, 255, 255, 0.25);
+    transition-duration: 500ms;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body class="wrapper">
+
+    <div class="navbar toolbar">
+        <div class="nav desktop">
+            <div class="vl"></div>
+            <div class="navlink"><i class="" style="font-size:32px;">MyBlog</i><a href="communities.html">
+                    <h3>.hu</h3>
+                </a></div>
+
+            <div class="vl"></div>
+            <div class="navlink"><i class="material-icons" id="curpage" style="font-size:32px;">home</i><a
+                    href="index.html">
+                    <h4 id="curpage">home</h4>
+                </a></div>
+            <div class="vl"></div>
+            <div class="navlink">
+
+            </div>
+        </div>
+    </div>
+
+
+    <main>
+        <div class="content1 content frame">
+            <div class="content1 narrow window frame">
+                <div class="window title window">Blogok</div>
+                <div class="tile window content center col main">{% block content %}{% endblock %}</div>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="footer navpage windows title">
+                    <div class="row">
+                        <div class="col"><a href="/doc/license">Licensed under MIT</a> • © 2014-2024 • <a
+                                href="/about">About OpenBooks</a>
+                                <select id="css-selector">
+                                    <option value="{{ url_for('static', filename='style.css') }}">Stílus 1</option>
+                                    <option value="{{ url_for('static', filename='style2.css') }}">Stílus 2</option>
+                                    <option value="{{ url_for('static', filename='style3.css') }}">Stílus 3</option>
+                                </select></div>
+                        <div class="col right"><a href="/about/updates">Last update: January 29th, 2024</a></div>
+                    </div>
+                
+            </div>
+
+        </footer>
+
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Ellenőrizzük, hogy van-e tárolt CSS beállítás
+            var savedStyle = localStorage.getItem('selectedStyle');
+            if (savedStyle) {
+                document.getElementById('stylesheet').href = savedStyle;
+                document.getElementById('css-selector').value = savedStyle;
+            }
+
+            // Esemény figyelése a CSS váltásra
+            document.getElementById('css-selector').addEventListener('change', function () {
+                var stylesheet = document.getElementById('stylesheet');
+                stylesheet.href = this.value;
+                // Tároljuk az új CSS beállítást
+                localStorage.setItem('selectedStyle', this.value);
+            });
+        });
+    </script>
+</body>
+
+</html>
